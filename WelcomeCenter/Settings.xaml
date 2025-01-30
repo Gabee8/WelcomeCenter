@@ -74,7 +74,7 @@
         <ListView Grid.Row="1" Name="ListLv" Grid.ColumnSpan="2" SelectionChanged="ListLv_SelectionChanged">
             <ListView.Resources>
                 <ContextMenu x:Key="ItemContextMenu">
-                    <MenuItem Header="Eltávolítás" Name="MFileDel" Click="MFileDel_Click">
+                    <MenuItem Header="{DynamicResource appDel}" Name="MFileDel" Click="MFileDel_Click">
                         <MenuItem.Icon>
                             <Image Source="/WelcomeCenter;component/Images/remove.png" />
                         </MenuItem.Icon>
@@ -88,9 +88,9 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Név" Width="200" DisplayMemberBinding="{Binding AppName}" />
-                    <GridViewColumn Header="Program helye" Width="280" DisplayMemberBinding="{Binding Location}" />
-                    <GridViewColumn Header="Silent switch" Width="100" DisplayMemberBinding="{Binding Silent}" />
+                    <GridViewColumn Header="{DynamicResource appName}" Width="200" DisplayMemberBinding="{Binding AppName}" />
+                    <GridViewColumn Header="{DynamicResource appPath}" Width="280" DisplayMemberBinding="{Binding Location}" />
+                    <GridViewColumn Header="{DynamicResource appSilent}" Width="100" DisplayMemberBinding="{Binding Silent}" />
 
                 </GridView>
 
