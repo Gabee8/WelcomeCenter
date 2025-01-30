@@ -1,0 +1,17 @@
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\bin\Debug\WelcomeCenter.exe
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\bin\Debug\WelcomeCenter.pdb
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\MainWindow.baml
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\MainWindow.g.cs
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\App.g.cs
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter_MarkupCompile.cache
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.g.resources
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.Properties.Resources.resources
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.csproj.GenerateResource.Cache
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.exe
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.pdb
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\styles.baml
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\App.baml
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\Settings.baml
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\Settings.g.cs
+d:\gabee\docs\visual studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\WelcomeCenter.csprojResolveAssemblyReference.cache
+D:\Gabee\Docs\Visual Studio 2010\Projects\WelcomeCenter\WelcomeCenter\obj\x86\Debug\Languages.baml

@@ -1,0 +1,30 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="lang">Magyar</system:String>
+    <system:String x:Key="apply">Alkalmaz</system:String>
+    <system:String x:Key="settings">Beállítások</system:String>
+    <system:String x:Key="maintitle">Kezdőpont</system:String>
+    <system:String x:Key="welcome">üdvözöljük</system:String>
+    <system:String x:Key="moreBt">További információ</system:String>
+    <system:String x:Key="compDetailsBt">A számítógép részletes adatainak megtekintése</system:String>
+    <system:String x:Key="personalizeBt">A Windows személyreszabása</system:String>
+    <system:String x:Key="personalizeTitle">A Windows személyreszabása</system:String>
+    <system:String x:Key="personalizeDetail">Ha szeretnéd személyreszabni a windows jó helyen vagy! Csak egy kattintás és megváltoztatahatod a háttérképet a témát és még számos beállítás közül választhatsz.</system:String>
+    <system:String x:Key="startBt">A program indítása</system:String>
+    <system:String x:Key="openFilter1">Programok</system:String>
+    <system:String x:Key="openFilter2">Minden fájl</system:String>
+    <system:String x:Key="programSettings">Program beállítás</system:String>
+    <system:String x:Key="styleVista">Windows Vista stílus</system:String>
+    <system:String x:Key="style7">Windows 7 stílus</system:String>
+    <system:String x:Key="style10">Windows 10 stílus</system:String>
+    <system:String x:Key="sort">Rendezés: (a-z)</system:String>
+    <system:String x:Key="appSett">App beállítás</system:String>
+    <system:String x:Key="appName">Név:</system:String>
+    <system:String x:Key="appPath">Alkalmazás helye:</system:String>
+    <system:String x:Key="appSilent">Alkalmazás kapcsoló:</system:String>
+    <system:String x:Key="appTitle">Leírás címe:</system:String>
+    <system:String x:Key="appDetail">Leírás:</system:String>
+    <system:String x:Key="appNew">Új program</system:String>
+    <system:String x:Key="appDel">Törlés</system:String>
+    <system:String x:Key="appDelQ">Valóban törölni szeretnéd?</system:String>
+</ResourceDictionary>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Apps>
+  <App>
+    <Name>Example program</Name>
+    <Path>C:\Windows\regedit.exe</Path>
+    <Switch>
+    </Switch>
+    <Icon>C:\Windows\regedit.exe</Icon>
+    <Title>Regedit</Title>
+    <Description>Windows Registry viewer</Description>
+  </App>
+</Apps>

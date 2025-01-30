@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="lang">English</system:String>
+    <system:String x:Key="apply">Apply</system:String>
+    <system:String x:Key="settings">Settings</system:String>
+    <system:String x:Key="maintitle">Getting Started</system:String>
+    <system:String x:Key="welcome">welcome</system:String>
+    <system:String x:Key="moreBt">More info</system:String>
+    <system:String x:Key="compDetailsBt">View computer details</system:String>
+    <system:String x:Key="personalizeBt">The Windows personalize</system:String>
+    <system:String x:Key="personalizeTitle">The Windows personalize</system:String>
+    <system:String x:Key="personalizeDetail">If would you personailize the Windows, great point here! The one click and change wallpaper, themes, screensavers etc...</system:String>
+    <system:String x:Key="startBt">Start program</system:String>
+    <system:String x:Key="openFilter1">Programs</system:String>
+    <system:String x:Key="openFilter2">All files</system:String>
+    <system:String x:Key="programSettings">Program settings</system:String>
+    <system:String x:Key="styleVista">Windows Vista style</system:String>
+    <system:String x:Key="style7">Windows 7 style</system:String>
+    <system:String x:Key="style10">Windows 10 style</system:String>
+    <system:String x:Key="sort">Sort: (a-z)</system:String>
+    <system:String x:Key="appSett">App settings</system:String>
+    <system:String x:Key="appName">Name:</system:String>
+    <system:String x:Key="appPath">App Path:</system:String>
+    <system:String x:Key="appSilent">Silent switch:</system:String>
+    <system:String x:Key="appTitle">Detail Title:</system:String>
+    <system:String x:Key="appDetail">Detail:</system:String>
+    <system:String x:Key="appNew">New program</system:String>
+    <system:String x:Key="appDel">Delete</system:String>
+    <system:String x:Key="appDelQ">Would you like a delete?</system:String>
+</ResourceDictionary>

@@ -1,0 +1,113 @@
+﻿<Window x:Class="WelcomeCenter.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource settings}" Height="457" Width="630" Loaded="Window_Loaded" Closed="Window_Closed" WindowStartupLocation="CenterOwner" UseLayoutRounding="True" Icon="/WelcomeCenter;component/Images/Settings32.png">
+    <Window.Resources>
+        <ResourceDictionary Source="/PresentationFramework.Aero,Version=3.0.0.0,Culture=neutral,PublicKeyToken=31bf3856ad364e35,processorArchitecture=MSIL;component/themes/Aero.NormalColor.xaml" />
+    </Window.Resources>
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="148"  />
+            <RowDefinition />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="{DynamicResource programSettings}">
+            <StackPanel Margin="5,0">
+                <RadioButton GroupName="ThemeGroup" Content="{DynamicResource styleVista}" Checked="RadioButton_Checked" Tag="0" Name="rb0" />
+                <RadioButton GroupName="ThemeGroup" Content="{DynamicResource style7}" Checked="RadioButton_Checked" Tag="1" Name="rb1" />
+                <RadioButton GroupName="ThemeGroup" Content="{DynamicResource style10}" Checked="RadioButton_Checked" Tag="2" Name="rb2" />
+                <Separator />
+                <CheckBox Name="sortName" Content="{DynamicResource sort}" Checked="sortName_Checked" Unchecked="sortName_Unchecked" />
+                <ComboBox Name="lngCb" SelectionChanged="lngCb_SelectionChanged" SelectedValuePath="Content" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="{DynamicResource appSett}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="0.2*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel >
+                <StackPanel Orientation="Horizontal">
+                        <Label Padding="2" Content="{DynamicResource appName}" />
+                    <TextBox Width="200" Name="Aname" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Padding="2" Content="{DynamicResource appPath}" />
+                    <TextBox Width="200" Name="Alocation" />
+                    <Button Padding="5,0"  Content="..." Name="browseAppBt" Click="browseAppBt_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Padding="2" Content="{DynamicResource appSilent}" />
+                    <TextBox Width="200" Name="Asw" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{DynamicResource appTitle}" />
+                        <TextBox Name="DescriptName" Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{DynamicResource appDetail}" />
+                        <TextBox Name="Description" Width="260" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" >
+                    <Image Margin="0,5" Width="48" Height="48" Name="iconImg" />
+                    <Button Style="{StaticResource VistaCommandButton}" Name="saveBt" Height="30" Click="saveBt_Click">
+                        <Image Source="/WelcomeCenter;component/Images/save24.png" />
+                    </Button>
+                    <Button Style="{StaticResource VistaCommandButton}" Name="addBt" Height="30" Click="addBt_Click">
+                        <Image Source="/WelcomeCenter;component/Images/add24.png" />
+                    </Button>
+                </StackPanel>
+                
+              
+                    
+              
+            </Grid>
+        </GroupBox>
+       
+        <ListView Grid.Row="1" Name="ListLv" Grid.ColumnSpan="2" SelectionChanged="ListLv_SelectionChanged">
+            <ListView.Resources>
+                <ContextMenu x:Key="ItemContextMenu">
+                    <MenuItem Header="Eltávolítás" Name="MFileDel" Click="MFileDel_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/WelcomeCenter;component/Images/remove.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+                </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Név" Width="200" DisplayMemberBinding="{Binding AppName}" />
+                    <GridViewColumn Header="Program helye" Width="280" DisplayMemberBinding="{Binding Location}" />
+                    <GridViewColumn Header="Silent switch" Width="100" DisplayMemberBinding="{Binding Silent}" />
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0,1,0,0" BorderBrush="#1E000000">
+            <DockPanel >
+                <DockPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFBFDFF" Offset="0.017" />
+                        <GradientStop Color="#FFDDE8F6" Offset="1" />
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <Button Padding="5,0" Margin="0,0,5,0" HorizontalAlignment="Right" Name="okBt" Content="{DynamicResource apply}" Click="okBt_Click">
+                </Button>
+            </DockPanel>
+
+        </Border>
+    </Grid>
+</Window>
