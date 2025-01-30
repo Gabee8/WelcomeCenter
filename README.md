@@ -1,1 +1,1 @@
-Getting Started app for Windows.
+# Getting Started app for Windows.
