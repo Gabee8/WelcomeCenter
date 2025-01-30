@@ -3,6 +3,12 @@
 [![License](https://img.shields.io/github/license/Gabee8/WelcomeCenter)](https://github.com/Gabee8/WelcomeCenter/blob/main/LICENSE)
 
 Simple Windows Getting Started app program written C# by Visual Studio 2010
+![welc_1](https://github.com/user-attachments/assets/4b7ca33e-ead2-4992-b606-06e88501095e)
+![welc_2](https://github.com/user-attachments/assets/a62f239d-2bb3-4075-b503-6e90af0c993f)
+![welc_3](https://github.com/user-attachments/assets/281a22ea-299a-4fab-b637-fc1ef0208167)
+
+
+
 ##### The program futures:
 - 3 style from header
 - Add custom apps the list
