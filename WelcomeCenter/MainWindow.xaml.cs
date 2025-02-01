@@ -204,26 +204,28 @@ namespace WelcomeCenter
         }
         private void AddProgramsForFile(string pathxml)
         {
-            try
-            {
-                if (pathxml != null)
+             if (pathxml != null)
                 {
                     DataSet channelsdata = new DataSet("AppsDataSet");
                     channelsdata.ReadXml(pathxml);
                     for (int i = 0; i < channelsdata.Tables[0].Rows.Count; i++)
                     {
-                        DataRow rw = channelsdata.Tables[0].Rows[i];
-                        var extractor = new IconExtractor(rw[3].ToString());
-                        System.Drawing.Icon appico = extractor.GetIcon(0);
+                        try
+                        {
+                            DataRow rw = channelsdata.Tables[0].Rows[i];
+                            var extractor = new IconExtractor(rw[3].ToString());
+                            System.Drawing.Icon appico = extractor.GetIcon(0);
 
-                        AddProgramsList(IconToBitmapImage(appico, 48), appico, rw[0].ToString(), rw[1].ToString(), rw[2].ToString(), rw[4].ToString(), rw[5].ToString());
+                            AddProgramsList(IconToBitmapImage(appico, 48), appico, rw[0].ToString(), rw[1].ToString(), rw[2].ToString(), rw[4].ToString(), rw[5].ToString());
+                        
+                        }
+                        catch (Exception ex)
+                        {
+                        }
                         
 
                     }
                 }
-            }
-            catch (Exception ex)
-            { }
         }
         void starting_timer_Tick(object sender, EventArgs e)
         { 
