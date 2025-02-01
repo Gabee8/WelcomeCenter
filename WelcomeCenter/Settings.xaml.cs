@@ -124,8 +124,6 @@ namespace WelcomeCenter
 
         public void SettingsImport(string pathxml)
         {
-            try
-            {
                 if (pathxml != null)
                 {
                     DataSet channelsdata = new DataSet("AppsDataSet");
@@ -133,6 +131,10 @@ namespace WelcomeCenter
 
                     for (int i = 0; i < channelsdata.Tables[0].Rows.Count; i++)
                     {
+                        try
+                        {
+
+                        
                         DataRow rw = channelsdata.Tables[0].Rows[i];
 
                         ListLv.Items.Add(new InstallApps()
@@ -144,12 +146,13 @@ namespace WelcomeCenter
                             DescTitle = rw[4].ToString(),
                             Description = rw[5].ToString()
                         });
+                        }
+                        catch (Exception)
+                        {
 
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            { }
         }
         
         private void Window_Closed(object sender, EventArgs e)
