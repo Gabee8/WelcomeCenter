@@ -27,4 +27,5 @@
     <system:String x:Key="appNew">Új program</system:String>
     <system:String x:Key="appDel">Törlés</system:String>
     <system:String x:Key="appDelQ">Valóban törölni szeretnéd?</system:String>
+    <system:String x:Key="sendTo">Küldés Asztal (parancsikon létrehozása)</system:String>
 </ResourceDictionary>

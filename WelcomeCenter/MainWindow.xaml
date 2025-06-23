@@ -90,18 +90,32 @@
         </Grid>
 
         <ListBox Padding="10" Grid.Row="1" Name="appList" ItemsSource="{Binding Path=ListObservableUsers, ElementName=AdminWindow}" BorderThickness="0" SelectionChanged="appList_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemsPanel>
+            
+                <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True"/>
                 </ItemsPanelTemplate>
+                
             </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Width="220">
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{DynamicResource sendTo}" Name="sendtoMenu" Click="sendtoMenu_Click">
+                                    <MenuItem.Icon>
+                                        <Image Source="/WelcomeCenter;component/Images/sendto.png" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+
+                        </StackPanel.ContextMenu>
                         <Image Width="48" Height="48" Margin="2" Source="{Binding Path=Image}"></Image>
                         <TextBlock Margin="5" MaxWidth="170" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" VerticalAlignment="Center"></TextBlock>
                     </StackPanel>
+                    
                 </DataTemplate>
+                
             </ListBox.ItemTemplate>
         </ListBox>
 

@@ -25,6 +25,7 @@ using System.Xml.Linq;
 using System.Data;
 using TsudaKageyu;
 using Ini;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace WelcomeCenter
 {
@@ -34,6 +35,39 @@ namespace WelcomeCenter
     /// </summary>
     public partial class MainWindow : Window
     {
+        //This could always be better adjusted to take more input instead of just being set.
+        //Then outside of your class but in your namespace
+        [ComImport]
+        [Guid("00021401-0000-0000-C000-000000000046")]
+        internal class ShellLink
+        {
+        }
+
+        [ComImport]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("000214F9-0000-0000-C000-000000000046")]
+        internal interface IShellLink
+        {
+            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out IntPtr pfd, int fFlags);
+            void GetIDList(out IntPtr ppidl);
+            void SetIDList(IntPtr pidl);
+            void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszName, int cchMaxName);
+            void SetDescription([MarshalAs(UnmanagedType.LPWStr)] string pszName);
+            void GetWorkingDirectory([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszDir, int cchMaxPath);
+            void SetWorkingDirectory([MarshalAs(UnmanagedType.LPWStr)] string pszDir);
+            void GetArguments([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszArgs, int cchMaxPath);
+            void SetArguments([MarshalAs(UnmanagedType.LPWStr)] string pszArgs);
+            void GetHotkey(out short pwHotkey);
+            void SetHotkey(short wHotkey);
+            void GetShowCmd(out int piShowCmd);
+            void SetShowCmd(int iShowCmd);
+            void GetIconLocation([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszIconPath, int cchIconPath, out int piIcon);
+            void SetIconLocation([MarshalAs(UnmanagedType.LPWStr)] string pszIconPath, int iIcon);
+            void SetRelativePath([MarshalAs(UnmanagedType.LPWStr)] string pszPathRel, int dwReserved);
+            void Resolve(IntPtr hwnd, int fFlags);
+            void SetPath([MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+        }
+
         DispatcherTimer timer = new DispatcherTimer();
         BackgroundWorker worker = new BackgroundWorker();
         public class MyApps
@@ -204,7 +238,8 @@ namespace WelcomeCenter
         }
         private void AddProgramsForFile(string pathxml)
         {
-             if (pathxml != null)
+           
+                if (pathxml != null)
                 {
                     DataSet channelsdata = new DataSet("AppsDataSet");
                     channelsdata.ReadXml(pathxml);
@@ -226,6 +261,8 @@ namespace WelcomeCenter
 
                     }
                 }
+            
+          
         }
         void starting_timer_Tick(object sender, EventArgs e)
         { 
@@ -621,6 +658,34 @@ namespace WelcomeCenter
             }
             
         }
+
+        private void CreateShortcut(MyApps LBoxObject)
+        {
+
+            IShellLink link = (IShellLink)new ShellLink();
+            string decription = LBoxObject.Description;
+            // setup shortcut information
+            if (LBoxObject.Description == "")
+            {
+                decription = LBoxObject.DescTitle;
+            }
+            link.SetDescription(decription);
+            link.SetPath(LBoxObject.Path);
+            link.SetWorkingDirectory(Path.GetDirectoryName(LBoxObject.Path));
+            link.SetArguments(LBoxObject.PathSw);
+            // save it
+            IPersistFile file = (IPersistFile)link;
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            file.Save(Path.Combine(desktopPath, LBoxObject.Name + ".lnk"), false);
+        }
+
+
+        private void sendtoMenu_Click(object sender, RoutedEventArgs e)
+        {
+            CreateShortcut((MyApps)appList.SelectedItem);
+        }
+
+        
 
     }
 
